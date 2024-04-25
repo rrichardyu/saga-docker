@@ -1,6 +1,6 @@
 # Saga Networks Docker Containerization
 
-# Setup
+## Setup
 
 Run the following commands to create the containers:
 
