@@ -1,0 +1,23 @@
+services:
+  node:
+    build: ./node
+    container_name: node
+    command: node server.js
+    ports: 
+      - "3000:3000"
+    networks:
+      - berkeley_saga_network
+  neo4j:
+    # image: neo4j:latest
+    build: ./neo4j
+    container_name: neo4j
+    environment:
+      NEO4J_AUTH: neo4j/berkeley
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - berkeley_saga_network
+networks:
+  berkeley_saga_network:
+    driver: bridge
