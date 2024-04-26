@@ -6,9 +6,12 @@ echo "Loading neo4j database"
 
 folder_path="db"
 
-for file in "$folder_path"/*.txt; do
+files=$(ls -1 "$folder_path"/*.txt | sort)
+
+for file in $files; do
     if [ -r "$file" ]; then
         cat "$file" | cypher-shell -u neo4j -p berkeley > /dev/null
+        # cat "$file" | cypher-shell -u neo4j -p berkeley
         echo "Processed file: $file"
     else
         echo "Error: Unable to read file: $file"
