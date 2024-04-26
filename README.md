@@ -16,3 +16,5 @@ Create the Docker containers with `docker-compose`:
 docker-compose build
 docker-compose up
 ```
+
+The Neo4j instance is accessible on port 7687 (browser on port 7474). The default Neo4j credentials are `neo4j:berkeley`.
